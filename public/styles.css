@@ -1,0 +1,434 @@
+/* 🔥 General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 🔥 Fire Background */
+.fire-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* 🔥 Dark Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    z-index: -1;
+}
+
+/* 🔥 Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+/* 🔥 Home Page */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 100px;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* 🔥 Shop Now Button */
+.shop-btn {
+    background-color: orange;
+    color: black;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.shop-btn:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid orange;
+}
+
+/* 🔥 Shop Page */
+.shop-header {
+    text-align: center;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.shop-header h1 {
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.shop-header p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* 🔥 Product Grid */
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+.product {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    border: 2px solid rgba(255, 165, 0, 0.6);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.out-of-stock {
+    display: block;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 🔥 Notify Me Button */
+.notify-btn {
+    background-color: orange;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.notify-btn:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid orange;
+}
+
+/* 🔥 Single Product Page - Firefighter Bot */
+.single-product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 90%;
+    border: 3px solid rgba(255, 165, 0, 0.7);
+    box-shadow: 0px 0px 15px rgba(255, 100, 0, 0.6);
+}
+
+.product-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 165, 0, 0.6);
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.product-details h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+    margin-bottom: 20px;
+}
+
+/* 🔥 Shop Page */
+.shop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.product-card {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    flex: 1;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    flex: 1;
+    text-align: center;
+}
+
+/* 🔥 About Us Page */
+.about-content {
+    text-align: center;
+    padding: 100px 50px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-content h1 {
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* 🔥 Team Section */
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: 50px;
+}
+
+.team-section h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: orange;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    border: 2px solid rgba(255, 165, 0, 0.6);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: orange;
+}
+
+/* 🔥 Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image {
+        max-width: 100%;
+    }
+
+    .home-content {
+        padding: 50px;
+    }
+
+    .shop-header h1 {
+        font-size: 35px;
+    }
+
+    .shop-header p {
+        font-size: 16px;
+    }
+
+    .shop-grid {
+        padding: 20px;
+    }
+
+    .product {
+        width: 100%;
+        max-width: 320px;
+    }
+}
