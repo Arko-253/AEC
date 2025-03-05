@@ -3,30 +3,34 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;  // Use environment port for Render
+const PORT = process.env.PORT || 3000; // Use environment port for Render
 
 // Enable CORS for GitHub Pages
 app.use(cors({
-    origin: "https://arko-253.github.io",  // Replace with your GitHub Pages URL
+    origin: "https://arko-253.github.io", // Allow frontend to access backend
     methods: "GET,POST"
 }));
 
-// Middleware to serve static files
-app.use(express.static('public'));
-
-// Import Routes
-const homeRoutes = require('./home');
-const shopRoutes = require('./shop');
-const aboutRoutes = require('./about');
-
-// Use Routes
-app.use('/', homeRoutes);
-app.use('/shop', shopRoutes);
-app.use('/about', aboutRoutes);
+// Serve static files (HTML, CSS, JS, Images)
+app.use(express.static(path.join(__dirname)));
 
 // API Route for Testing
 app.get('/api/test', (req, res) => {
     res.json({ message: "Backend is connected successfully!" });
+});
+
+// Serve shop.html and about.html correctly
+app.get('/shop', (req, res) => {
+    res.sendFile(path.join(__dirname, 'shop.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+// Serve index.html for unknown routes (Fixes "no such file" error)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
